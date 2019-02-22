@@ -39,11 +39,11 @@ plotGraph2 <-function(dat,xlabels,ylabels,soil,i,ymin,ymax){
 
 fetchData<-function(crop,country,metGrid,soilSelect,seasonSelect){
   con<-dbConnect(MySQL(),
-                 # user='cropdata',
-                 # password='!@Cr0pd@ta~!',
+                 # user='xxxx',
+                 # password='xxxx',
                  # host='localhost',
-                 user='root',
-                 password='cedarberg',
+                 user='xxxx',
+                 password='xxxx',
                  host='127.0.0.1',
                  dbname='cropdata')
   if(crop=="maize" | crop=="sorghum"| (crop=="bean" && country=="RSA")){
@@ -62,13 +62,13 @@ fetchData<-function(crop,country,metGrid,soilSelect,seasonSelect){
 
 listOfMetFiles<-function(){
     con<-dbConnect(MySQL(),
-                   # user='cropdata',
-                   # password='!@Cr0pd@ta~!',
-                   # host='localhost',
-                   user='root',
-                   password='cedarberg',
-                   host='127.0.0.1',
-                   dbname='cropdata')
+                   # user='xxxx',
+                 # password='xxxx',
+                 # host='localhost',
+                 user='xxxx',
+                 password='xxxx',
+                 host='127.0.0.1',
+                 dbname='cropdata')
 #  query <- dbSendQuery(con,'select distinct metGrid from (select metGrid from maizeRSA union select metGrid from maizeBOT union select metGrid from maizeKENYA union select metGrid from maizeMAUR union select metGrid from maizeZWE) t;')
   query <- dbSendQuery(con,'select DISTINCT metGrid from metGrids;')
   metList= dbFetch(query, n=-1)
